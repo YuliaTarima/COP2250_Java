@@ -1,5 +1,6 @@
 // Yulia Tarima
 // Chapter 4 Assignment 13
+// Version 2
 
 // This program prompts the user to enter a letter.
 // It checks and displays to the user
