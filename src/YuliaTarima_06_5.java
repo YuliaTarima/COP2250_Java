@@ -15,7 +15,7 @@
 // ensures each input is valid before proceeding
 // via getValidNumber helper method,
 // and then calls the method displaySortedNumbers
-// which uses an array and a sorting function.
+// which uses an array and a sorting function
 // to display inputted numbers in increasing order.
 
 import java.util.Scanner;
