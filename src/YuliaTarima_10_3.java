@@ -6,7 +6,8 @@
 // A test program validates all functionalities of the MyInteger class.
 
 class MyInteger_YT {
-    private final int value; // Stores the integer value
+    // Stores the integer value
+    private final int value;
 
     // Constructor
     public MyInteger_YT(int value) {
