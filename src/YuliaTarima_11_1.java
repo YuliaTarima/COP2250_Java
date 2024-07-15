@@ -1,3 +1,11 @@
+// Yulia Tarima
+// Chapter 11 Assignment 1
+
+// This program displays the perimeter, color,
+// true or false to indicate whether filled or not,
+// and the side length information
+// of the Triangle_YT extending GeometricObject
+// based on the information collected from user input.
 import java.util.Scanner;
 
 // Triangle_YT class extending GeometricObject
