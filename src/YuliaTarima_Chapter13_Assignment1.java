@@ -29,8 +29,8 @@
  * <p>
  * Requirements for testing Rectangle_YT Object:
  * <pre>
-
-
+ *
+ *
  *     - prompt the user to enter color (string)
  *     - prompt the user to enter boolean value for filled property
  *     - set user input values for color and filled status via GeometricObject setters
@@ -115,7 +115,29 @@ public class YuliaTarima_Chapter13_Assignment1 {
  * </pre>
  */
 class Rectangle_YT {
+    // Data fields with default values
+    double width = 1;
+    double height = 1;
 
+    // No-arg constructor that creates a default rectangle
+    Rectangle_YT() {
+    }
+
+    // Constructor that creates a rectangle with specified width and height
+    Rectangle_YT(double newWidth, double newHeight) {
+        width = newWidth;
+        height = newHeight;
+    }
+
+    // Method to get the area of the rectangle
+    double getArea() {
+        return width * height;
+    }
+
+    // Method to get the perimeter of the rectangle
+    double getPerimeter() {
+        return 2 * (width + height);
+    }
 }
 
 /**
