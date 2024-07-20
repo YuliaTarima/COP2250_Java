@@ -114,7 +114,7 @@ public class YuliaTarima_Chapter13_Assignment1 {
  *       (double getArea() { return width * height; })
  * </pre>
  */
-class Rectangle_YT {
+class Rectangle_YT extends GeometricObject {
     // Data fields with default values
     double width = 1;
     double height = 1;
@@ -129,14 +129,16 @@ class Rectangle_YT {
         height = newHeight;
     }
 
-    // Method to get the area of the rectangle
-    double getArea() {
-        return width * height;
+    // Method returning perimeter of the rectangle
+    @Override
+    public double getPerimeter() {
+        return 2 * (width + height);
     }
 
-    // Method to get the perimeter of the rectangle
-    double getPerimeter() {
-        return 2 * (width + height);
+    // Method getArea() returning area of the rectangle
+    @Override
+    public double getArea() {
+        return width * height;
     }
 }
 
@@ -155,8 +157,32 @@ class Rectangle_YT {
  *       (should return *)
  * </pre>
  */
-class Circle_YT {
+class Circle_YT extends GeometricObject {
+    // Data fields with default values
+    double width = 1;
+    double height = 1;
 
+    // No-arg constructor that creates a default rectangle
+    Circle_YT() {
+    }
+
+    // Constructor that creates a rectangle with specified width and height
+    Circle_YT(double newWidth, double newHeight) {
+        width = newWidth;
+        height = newHeight;
+    }
+
+    // Method returning perimeter of the rectangle
+    @Override
+    public double getPerimeter() {
+        return 0;
+    }
+
+    // Method getArea() returning area of the rectangle
+    @Override
+    public double getArea() {
+        return 0;
+    }
 }
 
 /**
@@ -173,6 +199,58 @@ class Circle_YT {
  *       (should return 0 - placeholder implementation needed to inherit abstract class)
  * </pre>
  */
-class Triangle_YT {
+class Triangle_YT extends GeometricObject {
+    // Three double data fields for sides defaulting to 1.0
+    private double side1 = 1.0;
+    private double side2 = 1.0;
+    private double side3 = 1.0;
 
+    // No-arg constructor that creates a default triangle
+    public Triangle_YT() {
+    }
+
+    // Constructor that creates a triangle with the specified sides
+    public Triangle_YT(double side1, double side2, double side3) {
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
+    }
+
+    // Accessor methods (getters and setters) for side1, side2, side3 of the triangle
+    public double getSide1() {
+        return side1;
+    }
+
+    public void setSide1(double side1) {
+        this.side1 = side1;
+    }
+
+    public double getSide2() {
+        return side2;
+    }
+
+    public void setSide2(double side2) {
+        this.side2 = side2;
+    }
+
+    public double getSide3() {
+        return side3;
+    }
+
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+    // Method returning perimeter of the triangle
+    @Override
+    public double getPerimeter() {
+        return side1 + side2 + side3;
+    }
+
+    // Method getArea() returning 0
+    // (placeholder implementation needed to inherit abstract class)
+    @Override
+    public double getArea() {
+        return 0;
+    }
 }
