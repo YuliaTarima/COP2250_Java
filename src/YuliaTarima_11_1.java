@@ -2,150 +2,102 @@
 // Chapter 11 Assignment 1
 
 /* This program displays
-     perimeter,
-     color,
-     true or false to indicate whether filled or not,
- side length information
- of the Triangle_YT extending GeometricObject
- based on the information collected from user input.
+ *    perimeter,
+ *    color,
+ *    true or false to indicate whether filled or not,
+ * side length information
+ * of the Triangle_YT extending GeometricObject
+ * based on the information collected from user input.
 */
 
 import java.util.Scanner;
 
 
-/**
- * 1. Triangle_YT class extending GeometricObject
- */
+/** 1. Triangle_YT class extending GeometricObject */
 class Triangle_YT extends GeometricObject {
     // Three double data fields for sides defaulting to 1.0
     private double side1 = 1.0;
     private double side2 = 1.0;
     private double side3 = 1.0;
 
-    /**
-     * 2. No-arg constructor that creates a default triangle
-     */
+    /* 1.1 No-arg constructor that creates a default triangle */
     public Triangle_YT() {
     }
 
-    /**
-     * 3. Constructor that creates a triangle with the specified sides
-     */
+    /* 1.2 Constructor that creates a triangle with the specified sides */
     public Triangle_YT(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
     }
 
-    /**
-     * 4. Accessor methods for all three side data fields
-     */
-    // Getter method for side1
-    public double getSide1() {
-        return side1;
-    }
+    /* 1.3. Accessor methods for all three sides of the triangle */
+    // Getter and setter for side1
+    public double getSide1() { return side1; }
+    public void setSide1(double side1) { this.side1 = side1; }
 
-    // Setter method for side1
-    public void setSide1(double side1) {
-        this.side1 = side1;
-    }
+    // Getter and setter for side2
+    public double getSide2() { return side2; }
+    public void setSide2(double side2) { this.side2 = side2; }
 
-    // Getter method for side2
-    public double getSide2() {
-        return side2;
-    }
+    // Getter and setter for side3
+    public double getSide3() { return side3; }
+    public void setSide3(double side3) { this.side3 = side3; }
 
-    // Setter method for side3
-    public void setSide2(double side2) {
-        this.side2 = side2;
-    }
-
-    // Getter method for side3
-    public double getSide3() {
-        return side3;
-    }
-
-    // Setter method for side3
-    public void setSide3(double side3) {
-        this.side3 = side3;
-    }
-
-    /**
-     * 5. Method returning perimeter of this triangle
-     */
+    /* 1.4. Method returning perimeter of the triangle */
     @Override
-    public double getPerimeter() {
-        return side1 + side2 + side3;
-    }
+    public double getPerimeter() { return side1 + side2 + side3; }
 
-    /**
-     * 6. Method getArea() returning 0
-     * (not implemented, needed to inherit Geometric Object).
-     */
+    /* 1.5. Method getArea() returning 0
+    (placeholder implementation needed to inherit abstract class) */
     @Override
-    public double getArea() {
-        return 0;
-    }
+    public double getArea() { return 0; }
 
-    /**
-     * 7. Method returning a string description for the triangle
-     */
+    /* 1.6. Method returning a string description for the triangle sides */
     @Override
     public String toString() {
         return "Triangle: side1 = " + side1 + " side2 = " + side2 + " side3 = " + side3;
     }
 }
 
-/**
- * 8. YuliaTarima_11_1 class (Test Program)
- */
+/** 2. YuliaTarima_11_1 class (Test Program) */
 public class YuliaTarima_11_1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        /**
-         * 9. Prompt user to enter triangle sides
-         */
+        /* 2.1 Prompt user to enter triangle sides */
         System.out.print("Enter first side of the triangle: ");
         double side1 = input.nextDouble();
-        System.out.print("\nEnter second side of the triangle: ");
+        System.out.print("Enter second side of the triangle: ");
         double side2 = input.nextDouble();
-        System.out.print("\nEnter third side of the triangle: ");
+        System.out.print("Enter third side of the triangle: ");
         double side3 = input.nextDouble();
 
-        /**
-         * 10. Create Triangle_YT object using user input for sides
-         */
+        /* 2.2 Create Triangle_YT object using user input for sides */
         Triangle_YT triangle = new Triangle_YT(side1, side2, side3);
 
-        /**
-         * 11. Prompt user for color and filled status
-         */
-        System.out.print("\nEnter the color of the triangle: ");
+        /* 2.3 Prompt user for color and filled status */
+        System.out.print("Enter the color of the triangle: ");
         String color = input.next();
         System.out.print("Is the triangle filled (true/false)? ");
         boolean filled = input.nextBoolean();
 
-        /**
-         * 12. Set color and filled status using user input
-         */
+        /* 2.4 Set color and filled status via GeometricObject using user input */
         triangle.setColor(color);
         triangle.setFilled(filled);
 
-        /**
-         * 13. Display triangle properties
-         */
-        System.out.println("Triangle information:");
-        // display the perimeter
+        /* 2.5 Display triangle properties */
+        System.out.println("---------------------\nTriangle information:\n---------------------");
+        // display perimeter
         System.out.println("Perimeter: " + triangle.getPerimeter());
-        // display the color
+        // display color
         System.out.println("Color: " + triangle.getColor());
-        // display the filled status
+        // display filled status
         System.out.println("Filled: " + triangle.isFilled());
-        // display triangle sides information
+        // display triangle information for sides
         System.out.println(triangle.toString());
+        System.out.println("---------------------");
 
         input.close();
     }
 }
-
