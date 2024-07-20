@@ -25,18 +25,18 @@ import java.util.Scanner;
  *     - has toString() method returning a string description for the triangle sides
  * </pre>
  */
-class Triangle_YT extends GeometricObject {
+class Triangle_YT_11_1 extends GeometricObject {
     // Three double data fields for sides defaulting to 1.0
     private double side1 = 1.0;
     private double side2 = 1.0;
     private double side3 = 1.0;
 
     // No-arg constructor that creates a default triangle
-    public Triangle_YT() {
+    public Triangle_YT_11_1() {
     }
 
     // Constructor that creates a triangle with the specified sides
-    public Triangle_YT(double side1, double side2, double side3) {
+    public Triangle_YT_11_1(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
@@ -89,7 +89,7 @@ public class YuliaTarima_11_1 {
         double side3 = input.nextDouble();
 
         // Create Triangle_YT object using user input for sides
-        Triangle_YT triangle = new Triangle_YT(side1, side2, side3);
+        Triangle_YT_11_1 triangle = new Triangle_YT_11_1(side1, side2, side3);
 
         // Prompt user for color and filled status
         System.out.print("Enter the color of the triangle: ");
@@ -102,7 +102,8 @@ public class YuliaTarima_11_1 {
         triangle.setFilled(filled);
 
         /* 2.5 Display triangle properties */
-        System.out.println("---------------------\nTriangle information:\n---------------------");
+        System.out.println("---------------------\n" +
+                "Triangle information:\n---------------------");
         // display perimeter
         System.out.println("Perimeter: " + triangle.getPerimeter());
         // display color

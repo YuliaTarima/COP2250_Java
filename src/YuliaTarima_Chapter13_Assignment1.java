@@ -148,7 +148,7 @@ class Circle_YT {
  *     - has accessor methods (getters and setters) for all three sides of the triangle
  *     - has @override getPerimeter() method returning perimeter of the triangle
  *     - has @override getArea() method returning area of the triangle
- *     (should return 0 - placeholder implementation needed to inherit abstract class)
+ *       (should return 0 - placeholder implementation needed to inherit abstract class)
  * </pre>
  */
 class Triangle_YT {

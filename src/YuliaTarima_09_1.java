@@ -7,16 +7,16 @@
 // A test program creates two specific rectangles
 // and prints their width, height, area, and perimeter.
 
-class Rectangle_YT {
+class Rectangle_YT_9_1 {
     // Data fields with default values
     double width = 1;
     double height = 1;
 
     // No-arg constructor that creates a default rectangle
-    Rectangle_YT() {}
+    Rectangle_YT_9_1() {}
 
     // Constructor that creates a rectangle with specified width and height
-    Rectangle_YT(double newWidth, double newHeight) {
+    Rectangle_YT_9_1(double newWidth, double newHeight) {
         width = newWidth;
         height = newHeight;
     }
@@ -35,8 +35,8 @@ class Rectangle_YT {
 public class YuliaTarima_09_1 {
     public static void main(String[] args) {
         // Create two Rectangle objects
-        Rectangle_YT rectangle1 = new Rectangle_YT(4, 40);
-        Rectangle_YT rectangle2 = new Rectangle_YT(3.5, 35.9);
+        Rectangle_YT_9_1 rectangle1 = new Rectangle_YT_9_1(4, 40);
+        Rectangle_YT_9_1 rectangle2 = new Rectangle_YT_9_1(3.5, 35.9);
 
         // Display the properties of the first rectangle
         System.out.println("Rectangle 1:");
