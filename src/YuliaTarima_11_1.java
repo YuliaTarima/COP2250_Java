@@ -1,96 +1,111 @@
 // Yulia Tarima
 // Chapter 11 Assignment 1
 
-// This program displays the perimeter, color,
-// true or false to indicate whether filled or not,
-// and the side length information
-// of the Triangle_YT extending GeometricObject
-// based on the information collected from user input.
+/* This program displays
+     perimeter,
+     color,
+     true or false to indicate whether filled or not,
+ side length information
+ of the Triangle_YT extending GeometricObject
+ based on the information collected from user input.
+*/
+
 import java.util.Scanner;
 
-// Triangle_YT class extending GeometricObject
-class Triangle_YT extends GeometricObject {
-    private final double side1;
-    private final double side2;
-    private final double side3;
-    private String color;
-    private boolean filled;
 
-    /** Default constructor */
+/**
+ * 1. Triangle_YT class extending GeometricObject
+ */
+class Triangle_YT extends GeometricObject {
+    // Three double data fields for sides defaulting to 1.0
+    private double side1 = 1.0;
+    private double side2 = 1.0;
+    private double side3 = 1.0;
+
+    /**
+     * 2. No-arg constructor that creates a default triangle
+     */
     public Triangle_YT() {
-        side1 = 1.0;
-        side2 = 1.0;
-        side3 = 1.0;
-        color = "white";
-        filled = false;
     }
 
-    /** Constructor with specified sides */
+    /**
+     * 3. Constructor that creates a triangle with the specified sides
+     */
     public Triangle_YT(double side1, double side2, double side3) {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
-        color = "white";
-        filled = false;
     }
 
-    /** Getter for side1 */
+    /**
+     * 4. Accessor methods for all three side data fields
+     */
+    // Getter method for side1
     public double getSide1() {
         return side1;
     }
 
-    /** Getter for side2 */
+    // Setter method for side1
+    public void setSide1(double side1) {
+        this.side1 = side1;
+    }
+
+    // Getter method for side2
     public double getSide2() {
         return side2;
     }
 
-    /** Getter for side3 */
+    // Setter method for side3
+    public void setSide2(double side2) {
+        this.side2 = side2;
+    }
+
+    // Getter method for side3
     public double getSide3() {
         return side3;
     }
 
-    /** Method to calculate perimeter */
+    // Setter method for side3
+    public void setSide3(double side3) {
+        this.side3 = side3;
+    }
+
+    /**
+     * 5. Method returning perimeter of this triangle
+     */
+    @Override
     public double getPerimeter() {
         return side1 + side2 + side3;
     }
 
-    /** Method to return area (which is 0 as per instructions) */
+    /**
+     * 6. Method getArea() returning 0
+     * (not implemented, needed to inherit Geometric Object).
+     */
+    @Override
     public double getArea() {
         return 0;
     }
 
-    /** Method to return string representation of the triangle */
+    /**
+     * 7. Method returning a string description for the triangle
+     */
+    @Override
     public String toString() {
-        return "Triangle: side1 = " + side1 + ", side2 = " + side2 + ", side3 = " + side3;
-    }
-
-    /** Setter for color */
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    /** Getter for color */
-    public String getColor() {
-        return color;
-    }
-
-    /** Setter for filled */
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-
-    /** Getter for filled */
-    public boolean isFilled() {
-        return filled;
+        return "Triangle: side1 = " + side1 + " side2 = " + side2 + " side3 = " + side3;
     }
 }
 
-// YuliaTarima_11_1 class (Test Program)
+/**
+ * 8. YuliaTarima_11_1 class (Test Program)
+ */
 public class YuliaTarima_11_1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Prompt user to enter triangle sides
+        /**
+         * 9. Prompt user to enter triangle sides
+         */
         System.out.print("Enter first side of the triangle: ");
         double side1 = input.nextDouble();
         System.out.print("\nEnter second side of the triangle: ");
@@ -98,24 +113,36 @@ public class YuliaTarima_11_1 {
         System.out.print("\nEnter third side of the triangle: ");
         double side3 = input.nextDouble();
 
-        // Create Triangle_YT object
+        /**
+         * 10. Create Triangle_YT object using user input for sides
+         */
         Triangle_YT triangle = new Triangle_YT(side1, side2, side3);
 
-        // Prompt user for color and filled status
+        /**
+         * 11. Prompt user for color and filled status
+         */
         System.out.print("\nEnter the color of the triangle: ");
         String color = input.next();
         System.out.print("Is the triangle filled (true/false)? ");
         boolean filled = input.nextBoolean();
 
-        // Set color and filled status
+        /**
+         * 12. Set color and filled status using user input
+         */
         triangle.setColor(color);
         triangle.setFilled(filled);
 
-        // Display triangle information
+        /**
+         * 13. Display triangle properties
+         */
         System.out.println("Triangle information:");
+        // display the perimeter
         System.out.println("Perimeter: " + triangle.getPerimeter());
+        // display the color
         System.out.println("Color: " + triangle.getColor());
+        // display the filled status
         System.out.println("Filled: " + triangle.isFilled());
+        // display triangle sides information
         System.out.println(triangle.toString());
 
         input.close();
