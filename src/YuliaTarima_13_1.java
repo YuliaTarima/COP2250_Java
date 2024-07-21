@@ -25,77 +25,35 @@
  *     - should create a method to compare perimeter of all 3 shapes
  *       but only comparing two at a time
  *       (may have to be written outside public static void main {})
- * </pre>
- * <p>
- * Requirements for testing Rectangle_YT Object:
- * <pre>
- *     - prompt the user to enter color (string)
- *     - prompt the user to enter boolean value for filled property
- *     - set user input values for color and filled status via GeometricObject setters
- *     - display area
- *     - display perimeter
- *     - display color
- *     - display value of filled property
- * </pre>
- * <pre>
- *     - Collect info from user, prompt the user to enter:
- *          - length of rectangle
- *          - width of rectangle
- *          - string value for color
- *          - boolean value for filled property
- *     - create a new Rectangle_YT object using user input values
- *          - set length via Rectangle_YT setters
- *          - set width via Rectangle_YT setters
- *          - set color via GeometricObject setters
- *          - set filled status via GeometricObject setters
- *     - display information to the user:
- *          - area
- *          - perimeter
- *          - color
- *          - value of filled property
- * </pre>
- * <p>
- * Requirements for testing Circle_YT object:
- * <pre>
- *     - Collect info from user, prompt the user to enter:
- *          -
- *          -
- *          - string value for color
- *          - boolean value for filled property
- *     - create a new Circle_YT object using user input values
- *          - set ***** via Circle_YT setters
- *          - set color via GeometricObject setters
- *          - set filled status via GeometricObject setters
- *     - display information to the user:
- *          - area
- *          - perimeter
- *          - color
- *          - value of filled property
- * </pre>
- * <p>
- * Requirements for testing Triangle_YT object:
- * <pre>
- *     - Collect info from user, prompt the user to enter:
- *          - side1, side2, side3 (double)
- *          - string value for color
- *          - boolean value for filled property
- *     - create a new Triangle_YT object using user input values
- *          - set ide1, side2, side3 via Triangle_YT setters
- *          - set color via GeometricObject setters
- *          - set filled status via GeometricObject setters
- *     - display information to the user:
- *          - (do not display area)
- *          - perimeter
- *          - color
- *          - value of filled property
- * </pre>
  */
 
 public class YuliaTarima_13_1 {
+    // Main method
     public static void main(String[] args) {
         java.util.Scanner input = new java.util.Scanner(System.in);
 
-        // Rectangle
+        /**
+         * Requirements for testing Rectangle_YT Object:
+         * <pre>
+         *     - Collect info from user, prompt the user to enter:
+         *          - length of rectangle
+         *          - width of rectangle
+         *          - string value for color
+         *          - boolean value for filled property
+         *     - create a new Rectangle_YT object using user input values
+         *          - set length via Rectangle_YT setters
+         *          - set width via Rectangle_YT setters
+         *          - set color via GeometricObject setters
+         *          - set filled status via GeometricObject setters
+         *     - display information to the user:
+         *          - area
+         *          - perimeter
+         *          - color
+         *          - value of filled property
+         * </pre>
+         */
+        System.out.print("Building a rectangle:\n");
+        // Collect rectangle info from the user
         System.out.print("Enter the width of the rectangle: ");
         double width = input.nextDouble();
         System.out.print("Enter the height of the rectangle: ");
@@ -105,34 +63,73 @@ public class YuliaTarima_13_1 {
         System.out.print("Is the rectangle filled? (true/false): ");
         boolean rectangleFilled = input.nextBoolean();
 
+        // Create an instance of the GeometricObject class using Rectangle_YT
         GeometricObject rectangle = new Rectangle_YT(width, height);
         rectangle.setColor(rectangleColor);
         rectangle.setFilled(rectangleFilled);
 
-        // Circle
+        /**
+         * Requirements for testing Circle_YT object:
+         * <pre>
+         *     - Collect info from user, prompt the user to enter:
+         *          - double value for radius
+         *          - string value for color
+         *          - boolean value for filled property
+         *     - create a new Circle_YT object using user input values
+         *          - set ***** via Circle_YT setters
+         *          - set color via GeometricObject setters
+         *          - set filled status via GeometricObject setters
+         *     - display information to the user:
+         *          - area
+         *          - perimeter
+         *          - color
+         *          - value of filled property
+         * </pre>
+         */
+        System.out.print("\nBuilding a circle:\n");
+        // Collect circle info from the user
         System.out.print("Enter the radius of the circle: ");
         double radius = input.nextDouble();
         System.out.print("Enter the color of the circle: ");
         String circleColor = input.next();
         System.out.print("Is the circle filled? (true/false): ");
         boolean circleFilled = input.nextBoolean();
-
+        // Create an instance of the GeometricObject class using Circle_YT
         GeometricObject circle = new Circle_YT(radius);
         circle.setColor(circleColor);
         circle.setFilled(circleFilled);
 
-        // Triangle
-        System.out.print("Enter the side1 of the triangle: ");
+        /** Requirements for testing Triangle_YT object:
+         * <pre>
+         *     - Collect info from user, prompt the user to enter:
+         *          - side1, side2, side3 (double)
+         *          - string value for color
+         *          - boolean value for filled property
+         *     - create a new Triangle_YT object using user input values
+         *          - set ide1, side2, side3 via Triangle_YT setters
+         *          - set color via GeometricObject setters
+         *          - set filled status via GeometricObject setters
+         *     - display information to the user:
+         *          - (do not display area)
+         *          - perimeter
+         *          - color
+         *          - value of filled property
+         * </pre>
+         */
+        System.out.print("\nBuilding a triangle\n");
+        // Collect triangle info from the user
+        System.out.print("Enter the side 1 of the triangle: ");
         double side1 = input.nextDouble();
-        System.out.print("Enter the side2 of the triangle: ");
+        System.out.print("Enter the side 2 of the triangle: ");
         double side2 = input.nextDouble();
-        System.out.print("Enter the side3 of the triangle: ");
+        System.out.print("Enter the side 3 of the triangle: ");
         double side3 = input.nextDouble();
         System.out.print("Enter the color of the triangle: ");
         String triangleColor = input.next();
         System.out.print("Is the triangle filled? (true/false): ");
         boolean triangleFilled = input.nextBoolean();
 
+        // Create an instance of the GeometricObject class using Triangle_YT
         GeometricObject triangle = new Triangle_YT(side1, side2, side3);
         triangle.setColor(triangleColor);
         triangle.setFilled(triangleFilled);
@@ -175,7 +172,6 @@ public class YuliaTarima_13_1 {
     }
 }
 
-
 /**
  * Rectangle_YT Class Requirements:
  * <pre>
@@ -193,35 +189,24 @@ public class YuliaTarima_13_1 {
  */
 class Rectangle_YT extends GeometricObject {
     // Data fields with default values
-    double width = 1;
-    double height = 1;
+    private double width = 1;
+    private double height = 1;
 
     // No-arg constructor that creates a default rectangle
     Rectangle_YT() {
     }
 
     // Constructor that creates a rectangle with specified width and height
-    Rectangle_YT(double newWidth, double newHeight) {
-        width = newWidth;
-        height = newHeight;
+    Rectangle_YT(double width, double height) {
+        setWidth(width);
+        setHeight(height);
     }
 
     // Accessor methods (getters and setters) for width and height of the rectangle
-    public double getWidth() {
-        return width;
-    }
-
-    public void setWidth(double width) {
-        this.width = width;
-    }
-
-    public double getHeight() {
-        return height;
-    }
-
-    public void setHeight(double height) {
-        this.height = height;
-    }
+    public double getWidth() { return width; }
+    private void setWidth(double width) { this.width = width; }
+    public double getHeight() { return height; }
+    private void setHeight(double height) { this.height = height; }
 
     // Method returning perimeter of the rectangle
     @Override
@@ -255,22 +240,16 @@ class Circle_YT extends GeometricObject {
     private double radius = 1;
 
     // No-arg constructor that creates a default circle
-    Circle_YT() {
-    }
+    Circle_YT() { }
 
     // Constructor that creates a circle with specified radius
-    Circle_YT(double radius) {
-        this.radius = radius;
-    }
+    Circle_YT(double radius) { setRadius(radius); }
 
     // Accessor methods (getters and setters) for the radius of the circle
     public double getRadius() {
         return radius;
     }
-
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
+    private void setRadius(double radius) { this.radius = radius; }
 
     // Method returning perimeter of the circle
     @Override
@@ -312,33 +291,28 @@ class Triangle_YT extends GeometricObject {
 
     // Constructor that creates a triangle with the specified sides
     public Triangle_YT(double side1, double side2, double side3) {
-        this.side1 = side1;
-        this.side2 = side2;
-        this.side3 = side3;
+        setSide1(side1);
+        setSide2(side2);
+        setSide3(side3);
     }
 
     // Accessor methods (getters and setters) for side1, side2, side3 of the triangle
     public double getSide1() {
         return side1;
     }
-
-    public void setSide1(double side1) {
+    private void setSide1(double side1) {
         this.side1 = side1;
     }
-
     public double getSide2() {
         return side2;
     }
-
-    public void setSide2(double side2) {
+    private void setSide2(double side2) {
         this.side2 = side2;
     }
-
     public double getSide3() {
         return side3;
     }
-
-    public void setSide3(double side3) {
+    private void setSide3(double side3) {
         this.side3 = side3;
     }
 
