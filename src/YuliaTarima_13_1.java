@@ -29,8 +29,6 @@
  * <p>
  * Requirements for testing Rectangle_YT Object:
  * <pre>
- *
- *
  *     - prompt the user to enter color (string)
  *     - prompt the user to enter boolean value for filled property
  *     - set user input values for color and filled status via GeometricObject setters
@@ -95,9 +93,88 @@
 
 public class YuliaTarima_13_1 {
     public static void main(String[] args) {
+        java.util.Scanner input = new java.util.Scanner(System.in);
 
+        // Rectangle
+        System.out.print("Enter the width of the rectangle: ");
+        double width = input.nextDouble();
+        System.out.print("Enter the height of the rectangle: ");
+        double height = input.nextDouble();
+        System.out.print("Enter the color of the rectangle: ");
+        String rectangleColor = input.next();
+        System.out.print("Is the rectangle filled? (true/false): ");
+        boolean rectangleFilled = input.nextBoolean();
+
+        GeometricObject rectangle = new Rectangle_YT(width, height);
+        rectangle.setColor(rectangleColor);
+        rectangle.setFilled(rectangleFilled);
+
+        // Circle
+        System.out.print("Enter the radius of the circle: ");
+        double radius = input.nextDouble();
+        System.out.print("Enter the color of the circle: ");
+        String circleColor = input.next();
+        System.out.print("Is the circle filled? (true/false): ");
+        boolean circleFilled = input.nextBoolean();
+
+        GeometricObject circle = new Circle_YT(radius);
+        circle.setColor(circleColor);
+        circle.setFilled(circleFilled);
+
+        // Triangle
+        System.out.print("Enter the side1 of the triangle: ");
+        double side1 = input.nextDouble();
+        System.out.print("Enter the side2 of the triangle: ");
+        double side2 = input.nextDouble();
+        System.out.print("Enter the side3 of the triangle: ");
+        double side3 = input.nextDouble();
+        System.out.print("Enter the color of the triangle: ");
+        String triangleColor = input.next();
+        System.out.print("Is the triangle filled? (true/false): ");
+        boolean triangleFilled = input.nextBoolean();
+
+        GeometricObject triangle = new Triangle_YT(side1, side2, side3);
+        triangle.setColor(triangleColor);
+        triangle.setFilled(triangleFilled);
+
+        // Display results
+        displayGeometricObject(rectangle);
+        displayGeometricObject(circle);
+        displayGeometricObject(triangle);
+
+        // Compare areas and perimeters
+        System.out.println("\nComparing Areas:");
+        System.out.println("Rectangle and Circle: " + equalArea(rectangle, circle));
+
+        System.out.println("\nComparing Perimeters:");
+        System.out.println("Rectangle and Circle: " + comparePerimeter(rectangle, circle));
+        System.out.println("Rectangle and Triangle: " + comparePerimeter(rectangle, triangle));
+        System.out.println("Circle and Triangle: " + comparePerimeter(circle, triangle));
+    }
+
+    public static void displayGeometricObject(GeometricObject obj) {
+        System.out.println("\nObject: " + obj.toString());
+        System.out.println("Area: " + obj.getArea());
+        System.out.println("Perimeter: " + obj.getPerimeter());
+        System.out.println("Color: " + obj.getColor());
+        System.out.println("Filled: " + obj.isFilled());
+    }
+
+    /**
+     * A method for comparing the areas of two geometric objects
+     */
+    public static boolean equalArea(GeometricObject object1, GeometricObject object2) {
+        return object1.getArea() == object2.getArea();
+    }
+
+    /**
+     * A method for comparing the perimeters of two geometric objects
+     */
+    public static boolean comparePerimeter(GeometricObject object1, GeometricObject object2) {
+        return object1.getPerimeter() == object2.getPerimeter();
     }
 }
+
 
 /**
  * Rectangle_YT Class Requirements:
