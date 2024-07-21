@@ -7,6 +7,7 @@
  *       via Rectangle_YT, Circle_YT and Triangle_YT
  *     - should have a method comparing the equality of rectangle vs. circle areas
  *     - should have a method to compare perimeter of all 3 shapes two at a time
+ * </pre>
  */
 
 public class YuliaTarima_13_1 {
@@ -14,25 +15,25 @@ public class YuliaTarima_13_1 {
     public static void main(String[] args) {
         java.util.Scanner input = new java.util.Scanner(System.in);
 
-        /**
-         * Requirements for testing Rectangle_YT Object:
-         * <pre>
-         *     - Collect info from user, prompt the user to enter:
-         *          - length of rectangle
-         *          - width of rectangle
-         *          - string value for color
-         *          - boolean value for filled property
-         *     - create a new Rectangle_YT object using user input values
-         *          - set length via Rectangle_YT setters
-         *          - set width via Rectangle_YT setters
-         *          - set color via GeometricObject setters
-         *          - set filled status via GeometricObject setters
-         *     - display information to the user:
-         *          - area
-         *          - perimeter
-         *          - color
-         *          - value of filled property
-         * </pre>
+        /*
+          Requirements for testing Rectangle_YT Object:
+          <pre>
+              - Collect info from user, prompt the user to enter:
+                   - length of rectangle
+                   - width of rectangle
+                   - string value for color
+                   - boolean value for filled property
+              - create a new Rectangle_YT object using user input values
+                   - set length via Rectangle_YT setters
+                   - set width via Rectangle_YT setters
+                   - set color via GeometricObject setters
+                   - set filled status via GeometricObject setters
+              - display information to the user:
+                   - area
+                   - perimeter
+                   - color
+                   - value of filled property
+          </pre>
          */
         System.out.print("\nBuilding a rectangle:");
         System.out.print("\n---------------------\n");
@@ -51,23 +52,23 @@ public class YuliaTarima_13_1 {
         rectangle.setColor(rectangleColor);
         rectangle.setFilled(rectangleFilled);
 
-        /**
-         * Requirements for testing Circle_YT object:
-         * <pre>
-         *     - Collect info from user, prompt the user to enter:
-         *          - double value for radius
-         *          - string value for color
-         *          - boolean value for filled property
-         *     - create a new Circle_YT object using user input values
-         *          - set ***** via Circle_YT setters
-         *          - set color via GeometricObject setters
-         *          - set filled status via GeometricObject setters
-         *     - display information to the user:
-         *          - area
-         *          - perimeter
-         *          - color
-         *          - value of filled property
-         * </pre>
+        /*
+          Requirements for testing Circle_YT object:
+          <pre>
+              - Collect info from user, prompt the user to enter:
+                   - double value for radius
+                   - string value for color
+                   - boolean value for filled property
+              - create a new Circle_YT object using user input values
+                   - set radius via Circle_YT setters
+                   - set color via GeometricObject setters
+                   - set filled status via GeometricObject setters
+              - display information to the user:
+                   - area
+                   - perimeter
+                   - color
+                   - value of filled property
+          </pre>
          */
         System.out.print("\nBuilding a circle:");
         System.out.print("\n------------------\n");
@@ -83,22 +84,22 @@ public class YuliaTarima_13_1 {
         circle.setColor(circleColor);
         circle.setFilled(circleFilled);
 
-        /** Requirements for testing Triangle_YT object:
-         * <pre>
-         *     - Collect info from user, prompt the user to enter:
-         *          - side1, side2, side3 (double)
-         *          - string value for color
-         *          - boolean value for filled property
-         *     - create a new Triangle_YT object using user input values
-         *          - set ide1, side2, side3 via Triangle_YT setters
-         *          - set color via GeometricObject setters
-         *          - set filled status via GeometricObject setters
-         *     - display information to the user:
-         *          - (do not display area)
-         *          - perimeter
-         *          - color
-         *          - value of filled property
-         * </pre>
+        /* Requirements for testing Triangle_YT object:
+          <pre>
+              - Collect info from user, prompt the user to enter:
+                   - side1, side2, side3 (double)
+                   - string value for color
+                   - boolean value for filled property
+              - create a new Triangle_YT object using user input values
+                   - set ide1, side2, side3 via Triangle_YT setters
+                   - set color via GeometricObject setters
+                   - set filled status via GeometricObject setters
+              - display information to the user:
+                   - (do not display area)
+                   - perimeter
+                   - color
+                   - value of filled property
+          </pre>
          */
         System.out.print("\nBuilding a triangle:");
         System.out.print("\n-------------------\n");
@@ -136,11 +137,14 @@ public class YuliaTarima_13_1 {
 
     public static void displayGeometricObject(GeometricObject obj) {
         System.out.println("\nObject: " + obj.toString());
+        // do not return area for triangle (placeholder for abstract method returns 0)
         if (obj.getArea() > 0) { System.out.println("Area: " + obj.getArea()); }
         System.out.println("Perimeter: " + obj.getPerimeter());
         System.out.println("Color: " + obj.getColor());
         System.out.println("Filled: " + obj.isFilled());
     }
+
+
 
     /**
      * A method for comparing the areas of two geometric objects
@@ -150,7 +154,7 @@ public class YuliaTarima_13_1 {
     }
 
     /**
-     * A method for comparing the perimeters of two geometric objects
+     * A method for comparing the perimeters of three geometric objects two at a time
      */
     public static boolean comparePerimeter(GeometricObject object1, GeometricObject object2) {
         return object1.getPerimeter() == object2.getPerimeter();
@@ -188,6 +192,7 @@ class Rectangle_YT extends GeometricObject {
     }
 
     // Accessor methods (getters and setters) for width and height of the rectangle
+    // Encapsulate setters to disable the write operation from the outside
     public double getWidth() { return width; }
     private void setWidth(double width) { this.width = width; }
     public double getHeight() { return height; }
@@ -234,6 +239,7 @@ class Circle_YT extends GeometricObject {
     public double getRadius() {
         return radius;
     }
+    // Encapsulate setter to disable the write operation from the outside
     private void setRadius(double radius) { this.radius = radius; }
 
     // Method returning perimeter of the circle
@@ -282,6 +288,7 @@ class Triangle_YT extends GeometricObject {
     }
 
     // Accessor methods (getters and setters) for side1, side2, side3 of the triangle
+    // Encapsulate setters to disable the write operation from the outside
     public double getSide1() {
         return side1;
     }
