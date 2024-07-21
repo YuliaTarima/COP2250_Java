@@ -147,43 +147,47 @@ class Rectangle_YT extends GeometricObject {
  * <pre>
  *     - should be built upon code from the book
  *     - should extend the abstract GeometricObject class
- *     - has * double data fields for * defaulting to *
+ *     - has a radius double data field defaulting to 1
  *     - has no-arg constructor that creates a default circle
- *     - has constructor that creates a circle with the specified *
- *     - has accessor methods (getters and setters) for * of the circle
+ *     - has constructor that creates a circle with the specified radius
+ *     - has accessor methods (getters and setters) for the radius of the circle
  *     - has @override getPerimeter() method returning perimeter of the circle
- *       (should return *)
  *     - has @override getArea() method returning area of the circle
- *       (should return *)
  * </pre>
  */
 class Circle_YT extends GeometricObject {
-    // Data fields with default values
-    double width = 1;
-    double height = 1;
 
-    // No-arg constructor that creates a default rectangle
+    // Data field with default values
+    double radius = 1;
+
+    // No-arg constructor that creates a default circle
     Circle_YT() {
     }
 
-    // Constructor that creates a rectangle with specified width and height
-    Circle_YT(double newWidth, double newHeight) {
-        width = newWidth;
-        height = newHeight;
+    // Constructor that creates a circle with specified radius
+    Circle_YT(double radius) {
+        this.radius = radius;
     }
 
-    // Method returning perimeter of the rectangle
+    // Accessor methods (getters and setters) for the radius of the circle
+    public double getRadius() {
+        return radius;
+    }
+    public void setRadius(double radius) { this.radius = radius; }
+
+    // Method returning perimeter of the circle
     @Override
     public double getPerimeter() {
-        return 0;
+        return 2 * radius * Math.PI;
     }
 
-    // Method getArea() returning area of the rectangle
+    // Method getArea() returning area of the circle
     @Override
     public double getArea() {
-        return 0;
+        return radius * radius * Math.PI;
     }
 }
+
 
 /**
  * Triangle_YT Class Requirements:
