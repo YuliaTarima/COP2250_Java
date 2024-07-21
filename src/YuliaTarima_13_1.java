@@ -93,7 +93,7 @@
  * </pre>
  */
 
-public class YuliaTarima_Chapter13_Assignment1 {
+public class YuliaTarima_13_1 {
     public static void main(String[] args) {
 
     }
