@@ -129,6 +129,23 @@ class Rectangle_YT extends GeometricObject {
         height = newHeight;
     }
 
+    // Accessor methods (getters and setters) for width and height of the rectangle
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
     // Method returning perimeter of the rectangle
     @Override
     public double getPerimeter() {
@@ -145,7 +162,7 @@ class Rectangle_YT extends GeometricObject {
 /**
  * Circle_YT Class Requirements:
  * <pre>
- *     - should be built upon code from the book
+ *     - should be built upon <a href="https://liveexample.pearsoncmg.com/liang/intro12e/html/Circle.html">code from the book</a>
  *     - should extend the abstract GeometricObject class
  *     - has a radius double data field defaulting to 1
  *     - has no-arg constructor that creates a default circle
@@ -158,7 +175,7 @@ class Rectangle_YT extends GeometricObject {
 class Circle_YT extends GeometricObject {
 
     // Data field with default values
-    double radius = 1;
+    private double radius = 1;
 
     // No-arg constructor that creates a default circle
     Circle_YT() {
@@ -173,7 +190,10 @@ class Circle_YT extends GeometricObject {
     public double getRadius() {
         return radius;
     }
-    public void setRadius(double radius) { this.radius = radius; }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
 
     // Method returning perimeter of the circle
     @Override
