@@ -1,30 +1,12 @@
 /**
- * Program Requirements:
- * <p>
- * Create four separate classes in the same file with their own set of braces.
- * List classes in the following order in the file.
- *  <ol>
- *      <li>public class YuliaTarima_Chapter13_Assignment1</li>
- *      <li>class Rectangle_YT</li>
- *      <li>class Circle_YT</li>
- *      <li>class Triangle_YT</li>
- *  </ol>
- * <p>
- */
-
-/**
  * Class YuliaTarima_Chapter13_Assignment1 (Test Program) Requirements:
  * <pre>
  *     - should be the only public class in the file
  *     - should contain main method
  *     - should create three instances of the GeometricObject class
  *       via Rectangle_YT, Circle_YT and Triangle_YT
- *     - should create a method to compare the areas of the rectangle and circle
- *       to see if equal (using GeometricObject)
- *       (may have to be written outside public static void main {})
- *     - should create a method to compare perimeter of all 3 shapes
- *       but only comparing two at a time
- *       (may have to be written outside public static void main {})
+ *     - should have a method comparing the equality of rectangle vs. circle areas
+ *     - should have a method to compare perimeter of all 3 shapes two at a time
  */
 
 public class YuliaTarima_13_1 {
@@ -52,7 +34,8 @@ public class YuliaTarima_13_1 {
          *          - value of filled property
          * </pre>
          */
-        System.out.print("Building a rectangle:\n");
+        System.out.print("\nBuilding a rectangle:");
+        System.out.print("\n---------------------\n");
         // Collect rectangle info from the user
         System.out.print("Enter the width of the rectangle: ");
         double width = input.nextDouble();
@@ -86,7 +69,8 @@ public class YuliaTarima_13_1 {
          *          - value of filled property
          * </pre>
          */
-        System.out.print("\nBuilding a circle:\n");
+        System.out.print("\nBuilding a circle:");
+        System.out.print("\n------------------\n");
         // Collect circle info from the user
         System.out.print("Enter the radius of the circle: ");
         double radius = input.nextDouble();
@@ -116,7 +100,8 @@ public class YuliaTarima_13_1 {
          *          - value of filled property
          * </pre>
          */
-        System.out.print("\nBuilding a triangle\n");
+        System.out.print("\nBuilding a triangle:");
+        System.out.print("\n-------------------\n");
         // Collect triangle info from the user
         System.out.print("Enter the side 1 of the triangle: ");
         double side1 = input.nextDouble();
@@ -151,7 +136,7 @@ public class YuliaTarima_13_1 {
 
     public static void displayGeometricObject(GeometricObject obj) {
         System.out.println("\nObject: " + obj.toString());
-        System.out.println("Area: " + obj.getArea());
+        if (obj.getArea() > 0) { System.out.println("Area: " + obj.getArea()); }
         System.out.println("Perimeter: " + obj.getPerimeter());
         System.out.println("Color: " + obj.getColor());
         System.out.println("Filled: " + obj.isFilled());
