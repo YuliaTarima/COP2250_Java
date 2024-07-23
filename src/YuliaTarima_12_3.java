@@ -17,8 +17,9 @@ public class YuliaTarima_12_3 {
         // Create an array with 100 randomly chosen integers
         int[] array = new int[100];
         Random random = new Random();
+        // Fill with random integers from 0 to 99
         for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(100); // Fill with random integers from 0 to 99
+            array[i] = random.nextInt(100);
         }
 
         // Prompt the user to enter the index of the array
