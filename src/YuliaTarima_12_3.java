@@ -1,3 +1,6 @@
+// Yulia Tarima
+// Chapter 12 Assignment 12.3
+
 import java.util.Random;
 import java.util.Scanner;
 

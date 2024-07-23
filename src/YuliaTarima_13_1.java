@@ -1,3 +1,6 @@
+// Yulia Tarima
+// Chapter 13 Assignment 13.1
+
 /**
  * Class YuliaTarima_Chapter13_Assignment1 (Test Program) Requirements:
  * <pre>
